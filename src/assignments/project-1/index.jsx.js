@@ -31,15 +31,17 @@ class Uploads extends React.Component {
 		const completedFiles = uploads.files.filter(({progress}) => !progress)
 
 		//step 7: added classNames
+			//here we are passing an onclick (we are using the function here) to a button
+		//step 8: we are checking the state of sidebarActive (true/false) && rendering the sidebar
+
 		return <div>
 
 			<h1 className="heading">CSS Grid when some sections don not render!</h1>
 			<div className="instructions">
 				<p>The challenge: Fix the CSS Grid so that the main area takes up all of the available space when the sidebar react component does not render. </p>
 				<button onClick={this.toggleSidebar.bind(this)}>{buttonText}</button>
-			</div>	//here we are passing an onclick (we are using the function here) to a button
+			</div>	
 
-			//step 8: we are checking the state of sidebar && rendering the sidebar
 			{sidebarActive && <div className="sidebar">
 				<h1 className="heading">Upload Images</h1>
 				{/* do not delete this uploader component */}
