@@ -1,0 +1,72 @@
+// Variables
+$brand-color: darkblue;
+$brand-section-color: white;
+$brand-text-color: #222;
+
+$react-accent: #61dafb;
+$react-background: #292c34;
+
+$breakpoint: 768px;
+$font-heading: 'Permanent Marker', sans-serif;
+$font-default: 'Oswald', sans-serif;
+
+// Styles
+
+body {
+	font-family: $font-default;
+	margin: 10vh 10vw;
+	color: $react-accent;
+	background: $react-background;
+}
+
+.heading {
+	font-family: $font-heading;
+}
+
+.instructions {
+	padding: 5px 12px 20px 12px;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background: lighten(adjust-hue($react-background, 30), 7);
+	font-size: 1.15rem;
+	
+	button {
+		border: none;
+		background: $react-accent;
+		font-family: $font-default;
+		padding: 20px;
+		border-radius: 0;
+		margin: 5px auto;
+		cursor: pointer;
+		transition: .4s ease;
+		
+		&:hover, &:active, &:focus {
+			background: adjust-hue($react-accent, 210);
+		}
+	}
+}
+
+.grid-container {
+	border: 2px dashed goldenrod;
+	display: grid;
+	padding: 10px;
+	grid-template-columns: 150px 1fr; //the first item takes 150px but what happens if we don't have the sidebar at all?
+	height: 100vh;
+	grid-gap: 30px;
+}
+
+.main {
+	background: darken($react-background, 7);
+	padding: 10px;
+}
+
+.sidebar {
+	background: lighten($react-background, 7);
+	padding: 10px;
+}
+
+.grid-container > .main:first-child {
+		grid-column: span 2;
+}
